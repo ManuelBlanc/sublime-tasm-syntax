@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>TASM</string>
+
+    <key>scopeName</key>
+    <string>source.tasm</string>
+
+    <key>fileTypes</key>
+    <array>
+        <string>asm</string>
+        <string>tasm</string>
+    </array>
+
+    <key>author</key>
+    <string>https://github.com/ManuelBlanc</string>
+
+    <key>uuid</key>
+    <string>C5E32D65-2456-42F9-B3DD-B4C2014BCF5C</string>
+
+    <key>repository</key>
+    <dict>
+    </dict>
+
+    <key>patterns</key>
+    <array>
+        <!-- Comment -->
+        <dict>
+            <key>name</key>
+            <string>comment.line.tasm</string>
+
+            <key>begin</key>
+            <string>;</string>
+
+            <key>end</key>
+            <string>$</string>
+        </dict>
+
+        <!-- String -->
+        <dict>
+            <key>name</key>
+            <string>string.quoted.double.tasm</string>
+
+            <key>begin</key>
+            <string>"</string>
+
+            <key>end</key>
+            <string>"</string>
+        </dict>
+
+        <!-- Storage -->
+        <dict>
+            <key>name</key>
+            <string>storage.type.tasm</string>
+
+            <key>match</key>
+            <string>(?i)\b(?:db|dw|dq|equ)\b</string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>storage.register.tasm</string>
+
+            <key>match</key>
+            <string>(?i)\b(?:[abcd][hlx]|[cdes]s|[sb]p|[sd]i)\b</string>
+        </dict>
+
+        <!-- Constant -->
+        <dict>
+            <key>name</key>
+            <string>constant.numeric.tasm</string>
+
+            <key>match</key>
+            <string>\b(?:[0-9]+|[0-9a-fA-F]+[hH])?\b</string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>constant.character.tasm</string>
+
+            <key>match</key>
+            <string>'.'</string>
+        </dict>
+
+        <!-- Keyword -->
+        <dict>
+            <key>name</key>
+            <string>keyword.directive.tasm</string>
+
+            <key>match</key>
+            <string>(?i)\b(?:$|\+|assume|dup|far|near)\b</string>
+        </dict>
+
+        <!-- Entity -->
+        <dict>
+            <key>name</key>
+            <string>entity.name.tasm</string>
+
+            <key>match</key>
+            <string>^\s*\.?\w+:</string>
+        </dict>
+
+        <dict>
+            <key>match</key>
+            <string>(?i)\b(\w+)\s+(segment(?:\s+stack)?|ends|macro|endm|proc|endp)\b</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.tasm</string>
+                </dict>
+
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>keyword.directive.tasm</string>
+                </dict>
+            </dict>
+        </dict>
+
+        <dict>
+            <key>match</key>
+            <string>(?i)\b(end)\s+(\w+)\b</string>
+            <key>captures</key>
+            <dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.tasm</string>
+                </dict>
+
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>keyword.directive.tasm</string>
+                </dict>
+            </dict>
+        </dict>
+
+        <!-- Support -->
+        <dict>
+            <key>name</key>
+            <string>support.mnemonic.tasm</string>
+
+            <key>match</key>
+            <string>(?i)\b(?:aad|aam|aas|adc|add|and|call|cbw|clc|cld|cmc|cmp|cmpsb|cmpsw|cwd|dec|div|esc|idiv|imul|in|inc|into|iret|j(?:|a|ae|b|be|c|cxz|e|g|ge|l|le|mp|na|nae|nb|nbe|nc|ne|ng|nge|nl|nle|no|np|ns|nz|o|p|pe|po|s|z)|lahf|lds|lea|les|lock|lodsb|lodsw|mov|movsb|movsw|mul|neg|not|or|out|pop|popf|push|pushf|rcl|rcr|repxx|ret|retn|retf|rol|ror|sahf|sal|sar|sbb|scasb|scasw|shl|shr|stc|std|stosb|stosw|sub|wait|xchg|xlat|xor|int)\b</string>
+        </dict>
+
+    </array>
+</dict>
+</plist>
