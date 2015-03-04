@@ -6,6 +6,6 @@
 	${0:; Code goes here...}
 	RET
 ${1} ENDP]]></content>
-	<tabTrigger>stack</tabTrigger>
+	<tabTrigger>proc</tabTrigger>
 	<scope>source.tasm</scope>
 </snippet>
