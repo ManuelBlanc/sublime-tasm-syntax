@@ -1,0 +1,10 @@
+<snippet>
+	<description>Code segment</description>
+	<content><![CDATA[${1:CODE} SEGMENT
+	${2:ASSUME CS: CODE, DS: DATA, ES: EXTRA, SS: STACK}
+
+	${0:; Code goes here...}
+${1} ENDS]]></content>
+	<tabTrigger>code</tabTrigger>
+	<scope>source.tasm</scope>
+</snippet>

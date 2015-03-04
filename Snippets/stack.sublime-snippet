@@ -1,0 +1,8 @@
+<snippet>
+	<description>Stack segment</description>
+	<content><![CDATA[${1:PILA} SEGMENT STACK "STACK"
+	${0:; Data goes here ...}
+${1} ENDS]]></content>
+	<tabTrigger>stack</tabTrigger>
+	<scope>source.tasm</scope>
+</snippet>

@@ -2,9 +2,9 @@
 Sublime TASM Syntax
 ===================
 
-A [Sublime Text][subl] package for Turbo assembly (TASM) syntax highlighting.
+A [Sublime Text][subl] package for Turbo assembly (TASM) syntax highlighting. The syntax file keeps it as simple as possible.
 
-(Currently) there is no additional functionality, like snippets, etc.
+Various snippets are included for easier segment, procedure and macro creation.
 
 
 ### Installation ###
@@ -14,7 +14,7 @@ Manual instalation via git:
 1. Navigate to your Sublime Text [`Packages`] folder.
 2. Run `git clone https://github.com/ManuelBlanc/sublime-tasm-syntax`
 
-Instalation via Package Control will (hopefully!) come soon.
+Instalation via Package Control will be (hopefully!) coming soon.
 
 
 [subl]: http://www.sublimetext.com/

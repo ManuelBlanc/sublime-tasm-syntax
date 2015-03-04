@@ -1,0 +1,11 @@
+<snippet>
+	<description>Procedure definition</description>
+	<content><![CDATA[${1:PROC_NAME} PROC ${2:NEAR}
+	PUSH BP
+	MOV BP, SP
+	${0:; Code goes here...}
+	RET
+${1} ENDP]]></content>
+	<tabTrigger>stack</tabTrigger>
+	<scope>source.tasm</scope>
+</snippet>

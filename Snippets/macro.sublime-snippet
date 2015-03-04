@@ -1,0 +1,8 @@
+<snippet>
+	<description>Macro definition</description>
+	<content><![CDATA[${1:MACRO_NAME} MACRO ${2:PARAM1,PARAM2}
+	${0:; Code goes here ...}
+${1} ENDM]]></content>
+	<tabTrigger>macro</tabTrigger>
+	<scope>source.tasm</scope>
+</snippet>
