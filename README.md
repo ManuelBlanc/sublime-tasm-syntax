@@ -11,7 +11,7 @@ Various snippets are included for easier segment, procedure and macro creation.
 
 Manual instalation via git:
 
-1. Navigate to your Sublime Text `Packages` folder ([more info][Packages]).
+1. Navigate to your Sublime Text [`Packages`][Packages] folder.
 2. Run `git clone https://github.com/ManuelBlanc/sublime-tasm-syntax`
 
 Instalation via Package Control will be (hopefully!) coming soon.
@@ -28,4 +28,4 @@ All suggestions and pull requests are welcome :)
 ### License ###
 
 This is free and unencumbered software released into the public domain.
-See the [LICENSE](../blob/master/LICENSE) file for more info.
+See the [LICENSE](../master/LICENSE) file for more info.
