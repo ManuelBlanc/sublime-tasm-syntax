@@ -67,6 +67,14 @@
             <string>(?i)\b(?:[abcd][hlx]|[cdes]s|[sb]p|[sd]i)\b</string>
         </dict>
 
+        <dict>
+            <key>name</key>
+            <string>storage.modifier.tasm</string>
+
+            <key>match</key>
+            <string>(?i)\b(?:offset|(?:byte|d?word)\s+ptr)\b</string>
+        </dict>
+
         <!-- Constant -->
         <dict>
             <key>name</key>
@@ -90,21 +98,21 @@
             <string>keyword.directive.tasm</string>
 
             <key>match</key>
-            <string>(?i)\b(?:$|\+|assume|dup|far|near)\b</string>
+            <string>(?i)\b(?:$|\+|altwild|assume|dup|far|locals|msfirst|near|noargshift|regset|wordaddrs)\b</string>
         </dict>
 
         <!-- Entity -->
         <dict>
             <key>name</key>
-            <string>entity.name.tasm</string>
+            <string>entity.label.tasm</string>
 
             <key>match</key>
-            <string>^\s*\.?\w+:</string>
+            <string>^\s*(?:@@)?\w+:</string>
         </dict>
 
         <dict>
             <key>match</key>
-            <string>(?i)\b(\w+)\s+(segment(?:\s+stack)?|ends|macro|endm|proc|endp)\b</string>
+            <string>(?i)\b(\w+\s+)?(segment(?:\s+stack)?|macro|proc|end[ps])\b</string>
             <key>captures</key>
             <dict>
                 <key>1</key>
@@ -121,9 +129,10 @@
             </dict>
         </dict>
 
+        <!-- END and ENDM are somewhat special -->
         <dict>
             <key>match</key>
-            <string>(?i)\b(end)\s+(\w+)\b</string>
+            <string>(?i)\b(endm?)(\s+\w+)?\b</string>
             <key>captures</key>
             <dict>
                 <key>2</key>
