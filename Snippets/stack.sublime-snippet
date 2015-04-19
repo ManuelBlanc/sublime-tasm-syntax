@@ -1,8 +1,8 @@
 <snippet>
 	<description>Stack segment</description>
-	<content><![CDATA[${1:STACK} SEGMENT STACK "STACK"
+	<content><![CDATA[${1:stack} segment stack "stack"
 	${0:; Data goes here ...}
-${1} ENDS]]></content>
+${1} ends]]></content>
 	<tabTrigger>stack</tabTrigger>
 	<scope>source.tasm</scope>
 </snippet>

@@ -1,8 +1,8 @@
 <snippet>
 	<description>Extra segment</description>
-	<content><![CDATA[${1:EXTRA} SEGMENT
+	<content><![CDATA[${1:extra} segment
 	${0:; Data goes here ...}
-${1} ENDS]]></content>
+${1} ends]]></content>
 	<tabTrigger>extra</tabTrigger>
 	<scope>source.tasm</scope>
 </snippet>
