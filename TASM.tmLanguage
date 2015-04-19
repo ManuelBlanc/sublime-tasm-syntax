@@ -50,13 +50,24 @@
             <string>"</string>
         </dict>
 
+        <dict>
+            <key>name</key>
+            <string>string.macro.literal.tasm</string>
+
+            <key>begin</key>
+            <string>&lt;</string>
+
+            <key>end</key>
+            <string>&gt;</string>
+        </dict>
+
         <!-- Storage -->
         <dict>
             <key>name</key>
             <string>storage.type.tasm</string>
 
             <key>match</key>
-            <string>(?i)\b(?:db|dw|dq|equ)\b</string>
+            <string>(?i)\b(?:db|dw|dd|dq|df|dt|dp|equ)\b</string>
         </dict>
 
         <dict>
@@ -72,7 +83,7 @@
             <string>storage.modifier.tasm</string>
 
             <key>match</key>
-            <string>(?i)\b(?:offset|(?:byte|d?word)\s+ptr)\b</string>
+            <string>(?i)\b(?:offset|seg|(?:byte|[dpfq]?word)(?:\s+ptr)?)\b</string>
         </dict>
 
         <!-- Constant -->
@@ -89,7 +100,15 @@
             <string>constant.character.tasm</string>
 
             <key>match</key>
-            <string>'.'</string>
+            <string>'(?:!.|.)'</string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>constant.other.tasm</string>
+
+            <key>match</key>
+            <string>(?&lt;=.)\s*\b[A-Z_]+\b</string>
         </dict>
 
         <!-- Keyword -->
@@ -98,16 +117,32 @@
             <string>keyword.directive.tasm</string>
 
             <key>match</key>
-            <string>(?i)\b(?:$|\+|altwild|assume|dup|far|locals|msfirst|near|noargshift|regset|wordaddrs)\b</string>
+            <string>(?i)^\s*(\.186|\.286|\.286c|\.286p|\.287|\.386|\.386c|\.386p|\.387|\.8086|\.8087|align|\.alpha|arg|assume|at|%bin|byte|byte|catstr|\.code|codeseg|comment|common|%conds|\.const|const|\.cref|%cref|%crefall|%crefref|%crefuref|%ctls|\.data|\.data\?|dataptr|dataseg|%depth|display|dosseg|else|elseif|elseif1|elseif2|elseifb|elseifdef|elseifdif|elseifdifi|elseife|elseifidn|elseifidni|elseifnb|elseifndef|emul|endif|eq|\.err|err|\.err1|\.err2|\.errb|\.errdef|\.errdif|\.errdifi|\.erre|\.erridn|errif|errif1|errif2|errifb|errifdef|errifdif|errifdifi|\.erridni|errife|errifidn|errifidni|errifnb|errifndef|\.errnb|\.errndef|\.errnz|even|evendata|exitm|extrn|far|\.fardata|fardata|\.fardata\?|fardata\?|ge|global|group|gt|high|ideal|if|if1|if2|ifb|ifdef|ifdif|ifdifi|ife|ifidn|ifidni|ifnb|ifndef|%incl|include|includelib|instr|irp|irpc|jumps|label|\.lall|large|le|length|\.lfcond|%linum|\.list|%list|local|locals|low|lt|%macs|mask|masm|masm51|memory|mod|\.model|model|multerrs|name|ne|near|%newpage|%noconds|%nocref|%noctls|noemul|%noincl|nojumps|%nolist|nolocals|%nomacs|nomasm51|nomulterrs|%nosyms|not|%notrunc|nowarn|org|%out|p186|p286|p286n|p286p|p287|p386|p386n|p386p|p387|p8086|p8087|page|page|%pagesize|para|%pcnt|pno87|%poplctl|public|public|purge|%pushlctl|quirks|\.radix|radix|record|rept|\.sall|\.seq|\.sfcond|shl|short|shr|size|sizestr|small|\.stack|stack|struc|substr|subttl|%subttl|%syms|symtype|%tabsize|tbyte|%text|\.tfcond|this|title|%title|%trunc|type|\.type|udataseg|ufardata|union|unknown|warn|width|\.xall|\.xcref|\.xlist)\b</string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>keyword.directive.tasm</string>
+
+            <key>match</key>
+            <string>(?i)\b(?:dup)\b</string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>keyword.operator.tasm</string>
+
+            <key>match</key>
+            <string>(?:!|\$|%|&amp;|\*|\+|-||/|:|;|;;|=)</string>
         </dict>
 
         <!-- Entity -->
         <dict>
             <key>name</key>
-            <string>entity.label.tasm</string>
+            <string>entity.name.label.tasm</string>
 
             <key>match</key>
-            <string>^\s*(?:@@)?\w+:</string>
+            <string>^\s*@*\w+:</string>
         </dict>
 
         <dict>
@@ -155,7 +190,7 @@
             <string>support.mnemonic.tasm</string>
 
             <key>match</key>
-            <string>(?i)\b(?:aad|aam|aas|adc|add|and|call|cbw|clc|cld|cmc|cmp|cmpsb|cmpsw|cwd|dec|div|esc|idiv|imul|in|inc|into|iret|j(?:|a|ae|b|be|c|cxz|e|g|ge|l|le|mp|na|nae|nb|nbe|nc|ne|ng|nge|nl|nle|no|np|ns|nz|o|p|pe|po|s|z)|lahf|lds|lea|les|lock|lodsb|lodsw|mov|movsb|movsw|mul|neg|not|or|out|pop|popf|push|pushf|rcl|rcr|repxx|ret|retn|retf|rol|ror|sahf|sal|sar|sbb|scasb|scasw|shl|shr|stc|std|stosb|stosw|sub|wait|xchg|xlat|xor|int)\b</string>
+            <string>(?i)^\s*(aaa|aad|aam|aas|adc|add|and|call|cbw|clc|cld|cli|cmc|cmp|cmps|cmpsb|cmpsw|cwd|daa|das|dec|div|esc|hlt|idiv|imul|in|inc|int|into|iret|ja|jae|jb|jbe|jc|jcxz|je|jg|jge|jl|jle|jmp|jna|jnae|jnb|jnbe|jnc|jne|jng|jnge|jnl|jnle|jno|jnp|jns|jnz|jo|jp|jpe|jpo|js|jz|lahf|lds|lea|les|lock|lods|lodsb|lodsw|loop|loope|loopne|loopnz|loopz|mov|movs|movsb|movsw|mul|neg|nop|not|or|out|pop|popf|push|pushf|rcl|rcr|rep|repe|repne|repnz|repz|ret|retn|retf|rol|ror|sahf|sal|sar|sbb|scas|scasb|scasw|shl|shr|stc|std|sti|stos|stosb|stosw|sub|test|wait|xchg|xlat|xor)\b</string>
         </dict>
 
     </array>

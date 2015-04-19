@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>name</key>
-    <string>Comments</string>
+    <string>TASM Comments and Indentation Rules</string>
 
     <key>scope</key>
     <string>source.tasm</string>
@@ -22,6 +22,12 @@
                 <string>; </string>
             </dict>
         </array>
+        <key>decreaseIndentPattern</key>
+        <string>(?:endm|endp|ends)</string>
+        <!--
+            <key>increaseIndentPattern</key>
+            <string></string>
+        -->
     </dict>
 </dict>
 </plist>
