@@ -1,6 +1,6 @@
 <snippet>
 	<description>Stack segment</description>
-	<content><![CDATA[${1:stack} segment stack "stack"
+	<content><![CDATA[${1:my_stack} segment stack "stack"
 	${0:; Data goes here ...}
 ${1} ends]]></content>
 	<tabTrigger>stack</tabTrigger>

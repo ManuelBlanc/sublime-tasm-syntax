@@ -1,14 +1,12 @@
 <snippet>
 	<description>Procedure definition</description>
 	<content><![CDATA[${1:proc_name} proc ${2:near}
-	${1/(?i)(main)|.*/(?1:MOV AX, DATA
-	mov ds, ax
-	mov ax, stack
-	mov ss, ax:push bp
-	mov bp, sp)/}
-	${0:; Code goes here...}${1/(?i)(main)|.*/(?1:
-	mov ax, 4c00h
-	int 21h)/}
+	push bp
+	mov bp, sp
+
+	${0:; Code goes here...}
+
+	ret
 ${1} endp]]></content>
 	<tabTrigger>proc</tabTrigger>
 	<scope>source.tasm</scope>

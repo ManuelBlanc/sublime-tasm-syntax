@@ -1,0 +1,16 @@
+<snippet>
+	<description>Program entry point</description>
+	<content><![CDATA[${1:main} proc far
+	mov ax, data
+	mov ds, ax
+	mov ax, stack
+	mov ss, ax
+
+	${0:; Code goes here...}
+
+	mov ax, 4c00h
+	int 21h
+${1} endp]]></content>
+	<tabTrigger>main</tabTrigger>
+	<scope>source.tasm</scope>
+</snippet>
